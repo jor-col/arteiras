@@ -1,1 +1,1 @@
-// import { Art } from "@/types/Art";
+import { Art } from "@/types/Art";
