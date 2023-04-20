@@ -1,0 +1,1 @@
+import { Art } from "@/types/Art";
