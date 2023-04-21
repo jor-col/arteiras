@@ -1,4 +1,4 @@
-// import "../globals.css"; // <-- might need
+import styles from './admin.module.css'
 
 // export const metadata = {
 //   title: "Arteiras Gallery and Boutique",
@@ -11,8 +11,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html className={styles.admin} lang="en">
+      <body >
         {children}
       </body>
     </html>

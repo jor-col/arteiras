@@ -1,0 +1,13 @@
+.admin body {
+  background: #456041;
+  padding: auto 5px;
+}
+
+.admin body>div {
+  border-radius: 50px;
+  background: #456041;
+  max-height: 500px;
+  width: 95%;
+  margin: auto;
+  box-shadow: 0px 0px 10px black;
+}
