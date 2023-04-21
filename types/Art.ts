@@ -1,14 +1,19 @@
+export type AristDetails = {
+  artist: string;
+  images: string[];
+  caption: string;
+  description: string;
+  artist_url: string;
+};
+
+export type Artists = {
+  content: AristDetails[];
+};
+
 export type Art = {
   _id: string;
   _createdAt: Date;
-  title: string;
+  month: Date;
   slug: string;
-  image1: string;
-  image2: string;
-  image3: string;
-  image4: string;
-  image5: string;
-  image6: string;
-  content: string[];
-  string: string;
+  featured_artists: Artists;
 };

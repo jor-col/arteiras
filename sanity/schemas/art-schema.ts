@@ -37,14 +37,9 @@ const art = {
               { name: "images", title: "Images", type: "array", of: [{ type: "image" }] },
               { name: "caption", title: "Caption", type: "string"},
               { name: "description", title: "Description", type: "string"},
-              { name: "artist_url", title: "Artist_Url", type: "string" }
+              { name: "artist_url", title: "Artist_Url", type: "string" },
             ]
           }],
-        },
-        {
-          name: 'alt',
-          title: 'Alt',
-          type: 'string'
         }
       ]
     },

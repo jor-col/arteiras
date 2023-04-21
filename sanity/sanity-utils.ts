@@ -2,8 +2,23 @@ import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config"
 import { Art } from "@/types/Art";
 
-// export const getArt = async (): Promise<Art[]> => {
-//   return createClient(clientConfig).fetch(
-//     groq`*[_type == "art"] | order(_createdAt) {}`
-//   );
-// };
+export const getArt = async (): Promise<Art> => {
+  // grabs the single newest Art document
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "art"] | order(_createdAt desc)[0] {
+      _id,
+      _createdAt,
+      month,
+      "slug": slug.current,
+      "featured_artists": featured_artists.content[]{
+        artist,
+        "images": images[]{
+          asset->{url}
+        },
+        caption,
+        description,
+        artist_url,
+      }
+    }`
+  );
+};
