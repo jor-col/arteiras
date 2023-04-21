@@ -3,5 +3,3 @@ export default function FeatArtist() {
     <h1>featured Artist</h1>
   )
 }
-
-
