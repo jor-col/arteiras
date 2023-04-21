@@ -1,5 +1,6 @@
+import Link from "next/link";
 import "../globals.css";
-import styles from './layout.module.css'
+import styles from "./layout.module.css";
 import Image from "next/image";
 
 // export const metadata = {
@@ -16,10 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav className={styles.navbar}>
-          <Image src='/Flower-Icon.webp' alt='' width={50} height={50} />
+          <Image src="/Flower-Icon.webp" alt="" width={50} height={50} />
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <hr></hr>
             <li>
@@ -35,9 +36,7 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        <div className={styles.pageContent}>
-          {children}
-        </div>
+        <div className={styles.pageContent}>{children}</div>
       </body>
     </html >
   );
