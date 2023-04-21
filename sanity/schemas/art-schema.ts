@@ -4,8 +4,8 @@ const art = {
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
+      name: "month",
+      title: "Month",
       type: "string"
     },
     {
@@ -13,7 +13,7 @@ const art = {
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
+        source: "month",
         maxLength: 96, // <-- define validation here
       },
     },
@@ -24,9 +24,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "text" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -42,9 +63,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "text" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -60,9 +102,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "text" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -78,9 +141,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "text" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -96,9 +180,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "text" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -114,9 +219,30 @@ const art = {
       options: { hotspot: true },
       fields: [
         {
+          name: 'artist',
+          title: 'Artist',
+          type: 'string'
+        },
+        {
+          name: 'month',
+          title: 'Month',
+          type: 'string'
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string'
+        },
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [{ type: "image" }],
+        },
+        {
+          name: "artist_url",
+          title: "Artist_Url",
+          type: "string",
         },
         {
           name: 'alt',
@@ -124,17 +250,6 @@ const art = {
           type: 'string'
         }
       ]
-    },
-    {
-      name: "content",
-      title: "Content",
-      type: "array",
-      of: [{ type: "text" }],
-    },
-    {
-      name: "string",
-      title: "String",
-      type: "string",
     },
   ],
 };
