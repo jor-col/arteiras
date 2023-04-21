@@ -7,10 +7,11 @@
 .main img {
   width: 100%;
   margin: auto;
+  max-width: 1000px;
 }
 
 .main h1 {
-  font-size: 5vw;
+  font-size: 3vw;
   color: white;
   margin: auto
 }
