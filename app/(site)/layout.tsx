@@ -24,7 +24,7 @@ export default function RootLayout({
             </li>
             <hr></hr>
             <li>
-              <a href="/featured-artist">Featured Artist</a>
+              <a href="/featured_artist">Featured Artist</a>
             </li>
             <hr></hr>
             <li>
@@ -38,6 +38,6 @@ export default function RootLayout({
         </nav>
         <div className={styles.pageContent}>{children}</div>
       </body>
-    </html >
+    </html>
   );
 }
