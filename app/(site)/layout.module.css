@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  color: white;
+  background-color: #0F230F;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  height: 40px;
+}
+
+.navbar hr {
+  height: 30px;
+}
+
+.navbar a {
+  transition: .5s;
+}
+
+.navbar a:hover {
+  text-shadow: 0px 0px 3px black;
+}
+
+.pageContent {
+  margin-top: 70px;
+  padding: 10px;
+}
