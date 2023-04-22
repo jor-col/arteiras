@@ -7,6 +7,7 @@ const config = defineConfig({
   dataset: 'production',
   title: 'My Portfolio Website',
   apiVersion: '2023-04-20',
+  useCdn: true, // <-- set to false for production
   basePath: '/admin',
   plugins: [deskTool()],
   schema: { types: schemas }
