@@ -22,3 +22,24 @@ export const getArt = async (): Promise<Art> => {
     }`
   );
 };
+
+export const getArtBySlug = async (slug:string): Promise<Art> => {
+  // grabs the single newest Art document
+  return createClient(clientConfig).fetch(
+    groq`*[slug.current == $slug]{
+      _id,
+      _createdAt,
+      month,
+      "slug": slug.current,
+      "featured_artists": featured_artists.content[]{
+        artist,
+        "images": images[]{
+          asset->{url}
+        },
+        caption,
+        artist_url,
+        description,
+      }
+    }`,{ slug }
+  );
+};
