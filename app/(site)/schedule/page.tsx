@@ -4,6 +4,9 @@ import CalendarButton from "../../components/CalendarButton";
 import ical from "ical.js";
 
 export default async function Schedule() {
+  const httpRegex = /\b(?:https?:\/\/)\S+\b/g;
+  const fbRegex = /\bfb:\/\/\S+\b/g;
+  let eventUrl, fbUrl;
   let calendar: any;
   let url =
     "https://calendar.google.com/calendar/ical/arteirasgallery%40gmail.com/public/basic.ics";
@@ -16,6 +19,10 @@ export default async function Schedule() {
       const vevents = vcalendar.getAllSubcomponents("vevent"); // Extract the VEVENT subcomponents
       calendar = vevents.map((vevent: any) => {
         const event = new ical.Event(vevent);
+        // console.log("ICAL EVENT", event.component.jCal.description);
+        // console.log("VEVENT", vevent.jCal.description);
+        console.log("EVENT", event.component);
+        console.log("VEVENT", vevent.jCal);
         return {
           Event: event.summary,
           start: event.startDate.toJSDate().toString(),
@@ -33,12 +40,39 @@ export default async function Schedule() {
       <h1>Schedule</h1>
       <>
         {calendar &&
-          calendar.slice(0, 3)?.map((el: any, i: number) =>
+          calendar.slice(0, 6)?.map((el: any, i: number) =>
             Object.entries(el)?.map((info: any, i: number) => {
               return i % 2 === 0 ? (
-                <b>{`${String(info)}`}</b>
+                <div>
+                  <span>
+                    <b>{`${String(info.slice(",")[0])}: `}</b>
+                  </span>
+                  <span>
+                    <i>
+                      {String(info).match(httpRegex) ||
+                      String(info).match(fbRegex) ? (
+                        <a
+                          href={String(info)
+                            /* .split("https://") */
+                            /* .join("") */
+                            .match(httpRegex)
+                            ?.join("")}
+                        >{`${String(info.slice(",")[1])}`}</a>
+                      ) : (
+                        `${String(info.slice(",")[1])}`
+                      )}
+                    </i>
+                  </span>
+                </div>
               ) : (
-                <i>{String(info)}</i>
+                <div>
+                  <span>
+                    <b>{`${String(info.slice(",")[0])}: `}</b>
+                  </span>
+                  <span>
+                    <i>{`${String(info.slice(",")[1])}`}</i>
+                  </span>
+                </div>
               );
             })
           )}
