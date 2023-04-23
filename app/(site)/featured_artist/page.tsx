@@ -14,7 +14,8 @@ export default async function FeatArtist() {
         return (
           <>
             {e.images.map((image: any) => (
-              <Image src={image.asset.url} alt="" width={100} height={100} />
+              // <Image src={image.asset.url} alt="" width={100} height={100} />
+              <div key={image + 7}>hi</div>
             ))}
             <p>{e.artist}</p>
           </>
