@@ -3,6 +3,10 @@
 import CalendarButton from "../../components/CalendarButton";
 import ical from "ical.js";
 
+import "dotenv/config";
+
+const { GOOGLE_CAL_API, ARTEIRAS_CAL_ID } = process.env;
+
 export default async function Schedule() {
   const httpRegex = /\b(?:https?:\/\/)\S+\b/g;
   const fbRegex = /\bfb:\/\/\S+\b/g;
