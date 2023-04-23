@@ -16,3 +16,14 @@ pnpm dev
 npm i
 npm run dev
 ```
+
+## Production
+
+```js
+/* sanity.config.ts */
+const config = defineConfig({
+  /* ... */
+  useCdn: true, // <-- set to false for production
+  /* ... */
+});
+```
