@@ -2,13 +2,14 @@
 
 import CalendarButton from "../../components/CalendarButton";
 import ical from "ical.js";
+import styles from "./schedule.module.css";
 
 import "dotenv/config";
 
 const { GOOGLE_CAL_API, ARTEIRAS_CAL_ID } = process.env;
 
 export default async function Schedule() {
-  const httpRegex = /\b(?:https?:\/\/)\S+\b/g;
+  const httpRegex = /((?:https?:\/\/)\S+)/g;
   const fbRegex = /\bfb:\/\/\S+\b/g;
   let eventUrl, fbUrl;
   let calendar: any;
@@ -47,22 +48,36 @@ export default async function Schedule() {
           calendar.slice(0, 6)?.map((el: any, i: number) =>
             Object.entries(el)?.map((info: any, i: number) => {
               return i % 2 === 0 ? (
-                <div>
+                <div className={styles.card}>
                   <span>
-                    <b>{`${String(info.slice(",")[0])}: `}</b>
+                    <b>{`${String(info.slice(",")[0].toLowerCase())}: `}</b>
                   </span>
                   <span>
                     <i>
                       {String(info).match(httpRegex) ||
                       String(info).match(fbRegex) ? (
-                        <a
-                          href={String(info)
-                            /* .split("https://") */
-                            /* .join("") */
-                            .match(httpRegex)
-                            ?.join("")}
-                        >{`${String(info.slice(",")[1])}`}</a>
+                        <div>
+                          {String(info)
+                            .split("https://")
+                            ?.map(
+                              (url, i) =>
+                                i > 0 && (
+                                  <div key={url + i}>
+                                    <a key={url + i} href={`https://${url}`}>
+                                      {`https://${url}`}
+                                    </a>
+                                  </div>
+                                )
+                            )}
+                        </div>
                       ) : (
+                        // <a
+                        //   href={String(info)
+                        //     /* .split("https://") */
+                        //     /* .join("") */
+                        //     .match(httpRegex)
+                        //     ?.join("")}
+                        // >{`${String(info).match(httpRegex)?.join("")}`}</a>
                         `${String(info.slice(",")[1])}`
                       )}
                     </i>
