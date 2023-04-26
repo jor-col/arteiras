@@ -1,17 +1,11 @@
-import styles from './admin.module.css'
-
 // export const metadata = {
 //   title: "Arteiras Gallery and Boutique",
 //   description: "Gallery and Event Space Site",
 // };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode; }) {
   return (
-    <html className={styles.admin} lang="en">
+    <html lang="en">
       <body >
         {children}
       </body>

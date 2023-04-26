@@ -23,7 +23,7 @@ export const getArt = async (): Promise<Art> => {
   );
 };
 
-export const getArtBySlug = async (slug:string): Promise<Art> => {
+export const getArtBySlug = async (slug:string): Promise<any> => {
   // grabs the single newest Art document
   return createClient(clientConfig).fetch(
     groq`*[slug.current == $slug]{
@@ -43,3 +43,11 @@ export const getArtBySlug = async (slug:string): Promise<Art> => {
     }`,{ slug }
   );
 };
+
+export const getAllSlugs = async (): Promise<any>  => {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "art"] | order(_createdAt desc) {
+      slug
+    }`
+  )
+}
