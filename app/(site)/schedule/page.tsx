@@ -56,13 +56,13 @@ export default async function Schedule() {
                     <i>
                       {String(info).match(httpRegex) ||
                       String(info).match(fbRegex) ? (
-                        <div>
+                        <div id="map-url-box" className={styles.mapUrlBox}>
                           {String(info)
                             .split("https://")
                             ?.map(
                               (url, i) =>
                                 i > 0 && (
-                                  <div key={url + i}>
+                                  <div id="map-url" key={url + i}>
                                     <a key={url + i} href={`https://${url}`}>
                                       {`https://${url}`}
                                     </a>
