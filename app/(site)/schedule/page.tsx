@@ -43,7 +43,7 @@ export default async function Schedule() {
   return (
     <>
       <h1>Schedule</h1>
-      <>
+      <div className={styles.borderBox}>
         {calendar &&
           calendar.slice(0, 6)?.map((el: any, i: number) =>
             Object.entries(el)?.map((info: any, i: number) => {
@@ -84,7 +84,7 @@ export default async function Schedule() {
                   </span>
                 </div>
               ) : (
-                <div>
+                <div className={styles.card}>
                   <span>
                     <b>{`${String(info.slice(",")[0])}: `}</b>
                   </span>
@@ -95,7 +95,7 @@ export default async function Schedule() {
               );
             })
           )}
-      </>
+      </div>
       <CalendarButton />
     </>
   );
