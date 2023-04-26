@@ -2,8 +2,16 @@
 
 import CalendarButton from "../../components/CalendarButton";
 import ical from "ical.js";
+import styles from "./schedule.module.css";
+
+import "dotenv/config";
+
+const { GOOGLE_CAL_API, ARTEIRAS_CAL_ID } = process.env;
 
 export default async function Schedule() {
+  const httpRegex = /((?:https?:\/\/)\S+)/g;
+  const fbRegex = /\bfb:\/\/\S+\b/g;
+  let eventUrl, fbUrl;
   let calendar: any;
   let url =
     "https://calendar.google.com/calendar/ical/arteirasgallery%40gmail.com/public/basic.ics";
@@ -16,6 +24,10 @@ export default async function Schedule() {
       const vevents = vcalendar.getAllSubcomponents("vevent"); // Extract the VEVENT subcomponents
       calendar = vevents.map((vevent: any) => {
         const event = new ical.Event(vevent);
+        // console.log("ICAL EVENT", event.component.jCal.description);
+        // console.log("VEVENT", vevent.jCal.description);
+        console.log("EVENT", event.component);
+        console.log("VEVENT", vevent.jCal);
         return {
           Event: event.summary,
           start: event.startDate.toJSDate().toString(),
@@ -31,18 +43,59 @@ export default async function Schedule() {
   return (
     <>
       <h1>Schedule</h1>
-      <>
+      <div className={styles.borderBox}>
         {calendar &&
-          calendar.slice(0, 3)?.map((el: any, i: number) =>
+          calendar.slice(0, 6)?.map((el: any, i: number) =>
             Object.entries(el)?.map((info: any, i: number) => {
               return i % 2 === 0 ? (
-                <b>{`${String(info)}`}</b>
+                <div className={styles.card}>
+                  <span>
+                    <b>{`${String(info.slice(",")[0].toLowerCase())}: `}</b>
+                  </span>
+                  <span>
+                    <i>
+                      {String(info).match(httpRegex) ||
+                      String(info).match(fbRegex) ? (
+                        <div id="map-url-box" className={styles.mapUrlBox}>
+                          {String(info)
+                            .split("https://")
+                            ?.map(
+                              (url, i) =>
+                                i > 0 && (
+                                  <div id="map-url" key={url + i}>
+                                    <a key={url + i} href={`https://${url}`}>
+                                      {`https://${url}`}
+                                    </a>
+                                  </div>
+                                )
+                            )}
+                        </div>
+                      ) : (
+                        // <a
+                        //   href={String(info)
+                        //     /* .split("https://") */
+                        //     /* .join("") */
+                        //     .match(httpRegex)
+                        //     ?.join("")}
+                        // >{`${String(info).match(httpRegex)?.join("")}`}</a>
+                        `${String(info.slice(",")[1])}`
+                      )}
+                    </i>
+                  </span>
+                </div>
               ) : (
-                <i>{String(info)}</i>
+                <div className={styles.card}>
+                  <span>
+                    <b>{`${String(info.slice(",")[0])}: `}</b>
+                  </span>
+                  <span>
+                    <i>{`${String(info.slice(",")[1])}`}</i>
+                  </span>
+                </div>
               );
             })
           )}
-      </>
+      </div>
       <CalendarButton />
     </>
   );
