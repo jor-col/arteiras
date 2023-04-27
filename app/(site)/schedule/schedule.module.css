@@ -6,10 +6,15 @@
   justify-items: center;
   padding: 10px;
   margin: 10px;
+  gap: 5px;
 }
 
 .card {
+  max-width: 400px;
+  height: 350px;
+  word-wrap: normal;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 4px inset;
@@ -19,7 +24,19 @@
   padding: 10px;
 }
 
+.card span {
+  display: flex;
+  word-break: break-word;
+  justify-content: center;
+  text-align: center;
+}
+
+.card u {
+  font-weight: bold;
+}
+
 .mapUrlBox {
   justify-content: center;
   align-items: center;
 }
+
