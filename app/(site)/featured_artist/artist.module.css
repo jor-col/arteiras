@@ -15,13 +15,23 @@
 
 }
 
+.month {
+  color: white;
+  font-size: 8rem;
+}
+
 .info {
   gap: 10px;
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   justify-content: space-around;
+  max-width: 500px;
+  text-align: center;
+}
+
+.info p {
+  text-align: center;
 }
 
 .artist a {
@@ -33,6 +43,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 @media only screen and (max-width: 800px) {
