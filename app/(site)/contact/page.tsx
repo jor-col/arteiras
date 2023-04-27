@@ -1,26 +1,12 @@
 'use client'
 import styles from './page.module.css'
-import { useState } from 'react'
-import axios from 'axios'
+
+
 
 export default function Contact() {
-  const [name, setName] = useState<string>()
-  const [email, setEmail] = useState<string>()
-  const [subject, setSubject] = useState<string>()
-  const [msg, setMsg] = useState<string>()
 
 
-  const handleSubmit = () => {
-    if (name && email && msg) {
-      axios.post('/api/email', { body: { name, email, subject, msg } })
-        .then(data => {
-          console.log('Success:', data);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-    }
-  }
+
 
 
   return (
@@ -35,18 +21,18 @@ export default function Contact() {
 
       <form className={styles.form}>
         <label>Name:</label>
-        <input onChange={e => setName(e.target.value)} type="text" id="name" name="name" />
+        <input type="text" id="name" name="name" />
 
         <label>Email:</label>
-        <input onChange={e => setEmail(e.target.value)} type="email" id="email" name="email" />
+        <input type="email" id="email" name="email" />
 
         <label>Subject:</label>
-        <input onChange={e => setSubject(e.target.value)} type="text" id="subject" name="subject" />
+        <input type="text" id="subject" name="subject" />
 
         <label>Message:</label>
-        <textarea onChange={e => setMsg(e.target.value)} id={styles.msg} name="msg" rows={10}></textarea>
+        <textarea id={styles.msg} name="msg" rows={10}></textarea>
 
-        <button onClick={handleSubmit} type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   )
