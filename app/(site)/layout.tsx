@@ -30,10 +30,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode; }
             </li>
             <hr></hr>
             <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-            <hr></hr>
-            <li>
               <Link href="/about">About</Link>
             </li>
           </ul>
