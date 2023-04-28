@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <video className={styles.video} autoPlay loop muted>
+        <source src='art-gallery-vid.webm' type='video/mp4' />
         <source src='art-gallery-vid.mp4' type='video/mp4' />
       </video>
       <div className={styles.main}>
