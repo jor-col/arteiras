@@ -1,14 +1,17 @@
 // "use client";
 
 import CalendarButton from "../../components/CalendarButton";
+import moment from "moment";
 import ical from "ical.js";
 import styles from "./schedule.module.css";
 
 import "dotenv/config";
+import Link from "next/link";
 
 const { GOOGLE_CAL_API, ARTEIRAS_CAL_ID } = process.env;
 
 export default async function Schedule() {
+  const regex = /(?:\S+\s+)?(\S{3,5}:\/\/\S+)\s*/g;
   const httpRegex = /((?:https?:\/\/)\S+)/g;
   const fbRegex = /\bfb:\/\/\S+\b/g;
   let eventUrl, fbUrl;
@@ -16,6 +19,7 @@ export default async function Schedule() {
   let url =
     "https://calendar.google.com/calendar/ical/arteirasgallery%40gmail.com/public/basic.ics";
   // let events;
+  let matchRegex = /\S*:\/\/\S*/;
 
   await fetch(url)
     .then((res) => {
@@ -46,85 +50,53 @@ export default async function Schedule() {
 
   return (
     <>
-      <h1>Schedule</h1>
+      <h1>
+        <b>
+          <u>Schedule</u>
+        </b>
+      </h1>
       <div className={styles.borderBox}>
         {calendar &&
-          calendar.slice(0, 6)?.map(
-            (el: any, i: number) => (
-              <>
+          calendar.slice(0, 6)?.map((el: any, i: number) => (
+            <div key={el + i} className={styles.cardBgBox}>
+              <div className={styles.cardBg}>
                 <div className={styles.card}>
-                  <u>Event</u>
+                  <h1>Event</h1>
                   <span>{el.event}</span>
-                  <u>Start</u>
-                  <span>{el.start}</span>
-                  <u>End</u>
-                  <span>{el.end}</span>
-                  <u>Location</u>
-                  <span>{el.location}</span>
+                  <h2>Start</h2>
+                  <span>{moment(el.start).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>End</h2>
+                  <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>Location</h2>
+                  <span>{el.location ? el.location : "Arteiras Gallery"}</span>
                   {el.description && (
                     <>
-                      <u>Description</u>
-                      <span>{el.description}</span>
+                      <h2>Description</h2>
+                      {el.description
+                        .split(/\s+/g)
+                        .map((word: any, index: number) => {
+                          if (/\bhttps?:\/\/\S+\b/.test(word)) {
+                            // If the word is a URL, create a link element
+                            return (
+                              <a
+                                key={index}
+                                href={word}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {word}
+                              </a>
+                            );
+                          } else {
+                            return <></>;
+                          }
+                        })}
                     </>
                   )}
                 </div>
-              </>
-            )
-
-            //   Object.entries(el)?.map((info: any, i: number) => {
-            //     return i % 2 === 0 ? (
-            //       <div className={styles.card}>
-            //         <span>
-            //           {String(info) === "description:" ? (
-            //             <>{String(info)}</>
-            //           ) : (
-            //             <h1>{String(info)}</h1>
-            //           )}
-            //         </span>
-            //         <span>
-            //           <i>
-            //             {String(info).match(httpRegex) ||
-            //             String(info).match(fbRegex) ? (
-            //               <div id="map-url-box" className={styles.mapUrlBox}>
-            //                 {/* {String(info)
-            //                   .split("https://")
-            //                   ?.map(
-            //                     (url, i) =>
-            //                       i > 0 && ( */}
-            //                 <div id="map-url">
-            //                   <a href={String(info).split(": ")[1].split(" ")[0]}>
-            //                     {String(info).split(": ")[1].split(" ")[0]}
-            //                   </a>
-            //                 </div>
-            //                 {/*//     )
-            //                   // )}*/}
-            //               </div>
-            //             ) : (
-            //               // <a
-            //               //   href={String(info)
-            //               //     /* .split("https://") */
-            //               //     /* .join("") */
-            //               //     .match(httpRegex)
-            //               //     ?.join("")}
-            //               // >{`${String(info).match(httpRegex)?.join("")}`}</a>
-            //               `${String(info.slice(",")[1])}`
-            //             )}
-            //           </i>
-            //         </span>
-            //       </div>
-            //     ) : (
-            //       <div className={styles.card}>
-            //         <span>
-            //           <b>{`${String(info.slice(",")[0])}: `}</b>
-            //         </span>
-            //         <span>
-            //           <i>{`${String(info.slice(",")[1])}`}</i>
-            //         </span>
-            //       </div>
-            //     );
-            //   })
-            // )}
-          )}
+              </div>
+            </div>
+          ))}
       </div>
       <CalendarButton />
     </>

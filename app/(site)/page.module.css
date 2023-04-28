@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #456041ae;
+  background: linear-gradient(to right top, #0a2007c7, #548b4dae);
   border-radius: 20px;
   outline: 2px solid #0F230F;
   padding: 10px;
