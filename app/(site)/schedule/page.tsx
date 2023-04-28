@@ -15,9 +15,13 @@ export default async function Schedule() {
   let calendar: any;
   let url =
     "https://calendar.google.com/calendar/ical/arteirasgallery%40gmail.com/public/basic.ics";
+  // let events;
 
   await fetch(url)
-    .then((res) => res.text()) // Fetch the response as plain text
+    .then((res) => {
+      // let events = JSON.stringify(res);
+      return res.text();
+    }) // Fetch the response as plain text
     .then((text) => {
       const jcalData = ical.parse(text); // Parse the iCalendar data using ical.js
       const vcalendar = new ical.Component(jcalData);
@@ -29,7 +33,7 @@ export default async function Schedule() {
         console.log("EVENT", event.component);
         console.log("VEVENT", vevent.jCal);
         return {
-          Event: event.summary,
+          event: event.summary,
           start: event.startDate.toJSDate().toString(),
           end: event.endDate.toJSDate().toString(),
           location: event.location,
@@ -45,55 +49,81 @@ export default async function Schedule() {
       <h1>Schedule</h1>
       <div className={styles.borderBox}>
         {calendar &&
-          calendar.slice(0, 6)?.map((el: any, i: number) =>
-            Object.entries(el)?.map((info: any, i: number) => {
-              return i % 2 === 0 ? (
+          calendar.slice(0, 6)?.map(
+            (el: any, i: number) => (
+              <>
                 <div className={styles.card}>
-                  <span>
-                    <b>{`${String(info.slice(",")[0].toLowerCase())}: `}</b>
-                  </span>
-                  <span>
-                    <i>
-                      {String(info).match(httpRegex) ||
-                      String(info).match(fbRegex) ? (
-                        <div id="map-url-box" className={styles.mapUrlBox}>
-                          {String(info)
-                            .split("https://")
-                            ?.map(
-                              (url, i) =>
-                                i > 0 && (
-                                  <div id="map-url" key={url + i}>
-                                    <a key={url + i} href={`https://${url}`}>
-                                      {`https://${url}`}
-                                    </a>
-                                  </div>
-                                )
-                            )}
-                        </div>
-                      ) : (
-                        // <a
-                        //   href={String(info)
-                        //     /* .split("https://") */
-                        //     /* .join("") */
-                        //     .match(httpRegex)
-                        //     ?.join("")}
-                        // >{`${String(info).match(httpRegex)?.join("")}`}</a>
-                        `${String(info.slice(",")[1])}`
-                      )}
-                    </i>
-                  </span>
+                  <u>Event</u>
+                  <span>{el.event}</span>
+                  <u>Start</u>
+                  <span>{el.start}</span>
+                  <u>End</u>
+                  <span>{el.end}</span>
+                  <u>Location</u>
+                  <span>{el.location}</span>
+                  {el.description && (
+                    <>
+                      <u>Description</u>
+                      <span>{el.description}</span>
+                    </>
+                  )}
                 </div>
-              ) : (
-                <div className={styles.card}>
-                  <span>
-                    <b>{`${String(info.slice(",")[0])}: `}</b>
-                  </span>
-                  <span>
-                    <i>{`${String(info.slice(",")[1])}`}</i>
-                  </span>
-                </div>
-              );
-            })
+              </>
+            )
+
+            //   Object.entries(el)?.map((info: any, i: number) => {
+            //     return i % 2 === 0 ? (
+            //       <div className={styles.card}>
+            //         <span>
+            //           {String(info) === "description:" ? (
+            //             <>{String(info)}</>
+            //           ) : (
+            //             <h1>{String(info)}</h1>
+            //           )}
+            //         </span>
+            //         <span>
+            //           <i>
+            //             {String(info).match(httpRegex) ||
+            //             String(info).match(fbRegex) ? (
+            //               <div id="map-url-box" className={styles.mapUrlBox}>
+            //                 {/* {String(info)
+            //                   .split("https://")
+            //                   ?.map(
+            //                     (url, i) =>
+            //                       i > 0 && ( */}
+            //                 <div id="map-url">
+            //                   <a href={String(info).split(": ")[1].split(" ")[0]}>
+            //                     {String(info).split(": ")[1].split(" ")[0]}
+            //                   </a>
+            //                 </div>
+            //                 {/*//     )
+            //                   // )}*/}
+            //               </div>
+            //             ) : (
+            //               // <a
+            //               //   href={String(info)
+            //               //     /* .split("https://") */
+            //               //     /* .join("") */
+            //               //     .match(httpRegex)
+            //               //     ?.join("")}
+            //               // >{`${String(info).match(httpRegex)?.join("")}`}</a>
+            //               `${String(info.slice(",")[1])}`
+            //             )}
+            //           </i>
+            //         </span>
+            //       </div>
+            //     ) : (
+            //       <div className={styles.card}>
+            //         <span>
+            //           <b>{`${String(info.slice(",")[0])}: `}</b>
+            //         </span>
+            //         <span>
+            //           <i>{`${String(info.slice(",")[1])}`}</i>
+            //         </span>
+            //       </div>
+            //     );
+            //   })
+            // )}
           )}
       </div>
       <CalendarButton />
