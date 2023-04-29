@@ -1,11 +1,22 @@
+"use client"
+import { useEffect } from 'react'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+
+  useEffect(() => {
+    fetch("pages/api/test")
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
+  }
+    , [])
 
   return (
     <>
