@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: #456041;
+  background: linear-gradient(to right top, #122c10, #40683b);
 }
 
 *,
