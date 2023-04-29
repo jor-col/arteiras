@@ -12,7 +12,9 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetch("pages/api/test")
+    fetch("/api/test", {
+      method: "GET",
+    })
       .then(data => console.log(data))
       .catch(err => console.log(err))
   }
