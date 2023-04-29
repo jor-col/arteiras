@@ -1,4 +1,5 @@
-.borderBox {
+.borderBoxBg {
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
   border: 3px rgba(165, 165, 165, 0.527) double;
   border-radius: 50px;
   box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
@@ -10,10 +11,41 @@
   gap: 5px;
 }
 
+.borderBoxGlass {
+  width: 450px;
+  height: auto;
+  justify-content: center;
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+  border: 2px rgba(197, 197, 197, 0.226) double;
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
+  display: grid;
+  justify-items: center;
+  /* padding: 11px 25px; */
+  /* padding-bottom: 28px; */
+  margin: 10px;
+  gap: 5px;
+}
+
+.borderBox {
+  background-color: rgba(38, 71, 32, 0.425);
+  border: 2px rgba(243, 243, 243, 0.151) solid;
+  backdrop-filter: blur(2px);
+  border-radius: 50px;
+  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
+  display: grid;
+  justify-items: center;
+  padding: 12px 25px;
+  /* padding-bottom: 28px; */
+  margin: 10px;
+  gap: 5px;
+}
+
 .cardBgBox {
   position: relative;
-  border-radius: 15px;
-  height: 400px;
+  border-radius: 50px;
+  height: 420px;
   width: 400px;
   margin: 1rem 0;
   background-image: url("../../../public/image-3.webp");
@@ -29,7 +61,7 @@
   justify-content: center;
   align-items: center;
   border: 2px inset rgba(245, 245, 245, 0.5);
-  border-radius: 15px;
+  border-radius: 50px;
   box-shadow: 2px 0px 2px 2px inset rgba(128, 128, 128, 0.671);
   /* margin: 1rem 0; */
   z-index: -50;
@@ -47,7 +79,7 @@
   justify-content: center;
   align-items: center;
   border: 4px inset;
-  border-radius: 15px;
+  border-radius: 50px;
   box-shadow: 0px 3px 3px 2px inset rgba(128, 128, 128, 0.671);
   padding: 10px;
   z-index: 10;
@@ -91,4 +123,8 @@
 .mapUrlBox {
   justify-content: center;
   align-items: center;
+}
+
+.test {
+  color: rgb(1, 1, 1);
 }
