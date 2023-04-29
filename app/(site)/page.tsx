@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
@@ -7,11 +7,16 @@ import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [test, setTest] = useState();
+
   useEffect(() => {
     fetch("/api/test", {
       method: "GET",
     })
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log("front end data:", data);
+        setTest(data as any);
+      })
       .catch((err) => console.log(err));
   }, []);
 
