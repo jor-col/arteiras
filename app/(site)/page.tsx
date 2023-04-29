@@ -8,7 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   useEffect(() => {
-    fetch("/api/test")
+    fetch("/api/test", {
+      method: "GET",
+    })
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }, []);
