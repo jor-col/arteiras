@@ -5,9 +5,6 @@
   box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
   display: grid;
   justify-items: center;
-  /* padding: 11px 25px; */
-  /* padding-bottom: 28px; */
-  /* margin: 10px; */
   gap: 5px;
 }
 
@@ -23,9 +20,6 @@
   box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
   display: grid;
   justify-items: center;
-  /* padding: 11px 25px; */
-  /* padding-bottom: 28px; */
-  /* padding: .9rem; */
   margin: .5rem;
   gap: 5px;
 }
@@ -41,8 +35,6 @@
   display: grid;
   justify-items: center;
   padding: 12px 25px;
-  /* padding-bottom: 28px; */
-  /* gap: 5px; */
 }
 
 .cardBgBox {
@@ -58,7 +50,6 @@
 .cardBg {
   max-width: 400px;
   height: 415px;
-  /* background-color: rgba(200, 247, 179, 0.178); */
   background: linear-gradient(to right top, #f5c14742, #5e45096c);
   backdrop-filter: blur(5px);
   display: flex;
@@ -67,14 +58,12 @@
   border: 2px inset rgba(245, 245, 245, 0.5);
   border-radius: 50px;
   box-shadow: 2px 0px 2px 2px outset rgb(19, 19, 19); /* rgba(128, 128, 128, 0.671) */
-  /* margin: 1rem 0; */
   z-index: -50;
 }
 
 .card {
   width: 400px;
   height: 420px;
-  /* background: linear-gradient(to right top, #d6a83c, #8a6b24); */
   background-color: rgba(201, 247, 179, 0.192);
   backdrop-filter: blur(1px);
   word-wrap: normal;
