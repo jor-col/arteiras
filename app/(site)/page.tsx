@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import { FiMap, FiPhoneCall, FiMail, FiInstagram } from 'react-icons/fi'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
           Orleans community, and we invite you to come and discover the beauty
           and creativity of Arteiras Gallery and Boutique.
         </p>
+        {/* <DropboxImages /> */}
       </div>
       <video className={styles.video} autoPlay loop muted>
         <source src="art-gallery-vid.webm" type="video/mp4" />

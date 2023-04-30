@@ -34,8 +34,8 @@ export default async function Schedule() {
         const event = new ical.Event(vevent);
         // console.log("ICAL EVENT", event.component.jCal.description);
         // console.log("VEVENT", vevent.jCal.description);
-        console.log("EVENT", event.component);
-        console.log("VEVENT", vevent.jCal);
+        // console.log("EVENT", event.component);
+        // console.log("VEVENT", vevent.jCal);
         return {
           event: event.summary,
           start: event.startDate.toJSDate().toString(),
@@ -44,7 +44,7 @@ export default async function Schedule() {
           description: event.description,
         };
       });
-      console.log("Events:", calendar); // Log the events to the console
+      // console.log("Events:", calendar); // Log the events to the console
     })
     .catch((err) => console.error("Error:", err));
 

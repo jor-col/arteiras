@@ -1,45 +1,40 @@
 .borderBoxBg {
-  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+  width: 490px;
   border: 3px rgba(165, 165, 165, 0.527) double;
   border-radius: 50px;
   box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
   display: grid;
   justify-items: center;
-  padding: 11px 25px;
-  padding-bottom: 28px;
-  margin: 10px;
   gap: 5px;
 }
 
 .borderBoxGlass {
-  width: 450px;
+  width: 490px;
   height: auto;
   justify-content: center;
-  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
-  border: 2px rgba(197, 197, 197, 0.226) double;
-  backdrop-filter: blur(4px);
+  background-image: url("../../../public/scribble-light.png");
+  background-color: rgb(4, 24, 1);
+  border: 1px rgba(197, 197, 197, 0.507) double;
+  backdrop-filter: blur(40px);
   border-radius: 50px;
   box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
   display: grid;
   justify-items: center;
-  /* padding: 11px 25px; */
-  /* padding-bottom: 28px; */
-  margin: 10px;
+  margin: .5rem;
   gap: 5px;
 }
 
 .borderBox {
-  background-color: rgba(38, 71, 32, 0.425);
-  border: 2px rgba(243, 243, 243, 0.151) solid;
-  backdrop-filter: blur(2px);
+  width: 490px;
+  /* height: auto; */
+  background-color: rgba(38, 71, 32, 0.438);
+  border: 1px rgba(255, 254, 254, 0.151) solid;
+  backdrop-filter: blur(5px);
   border-radius: 50px;
-  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
+  box-shadow: 4px 8px 12px 2px rgba(24, 24, 24, 0.39);
   display: grid;
   justify-items: center;
   padding: 12px 25px;
-  /* padding-bottom: 28px; */
-  margin: 10px;
-  gap: 5px;
 }
 
 .cardBgBox {
@@ -47,14 +42,14 @@
   border-radius: 50px;
   height: 420px;
   width: 400px;
-  margin: 1rem 0;
+  margin: 1.7rem 0;
   background-image: url("../../../public/image-3.webp");
+  box-shadow: 4px 7px 15px 2px rgb(19, 19, 19);
 }
 
 .cardBg {
   max-width: 400px;
   height: 415px;
-  /* background-color: rgba(200, 247, 179, 0.178); */
   background: linear-gradient(to right top, #f5c14742, #5e45096c);
   backdrop-filter: blur(5px);
   display: flex;
@@ -62,15 +57,13 @@
   align-items: center;
   border: 2px inset rgba(245, 245, 245, 0.5);
   border-radius: 50px;
-  box-shadow: 2px 0px 2px 2px inset rgba(128, 128, 128, 0.671);
-  /* margin: 1rem 0; */
+  box-shadow: 2px 0px 2px 2px outset rgb(19, 19, 19); /* rgba(128, 128, 128, 0.671) */
   z-index: -50;
 }
 
 .card {
   width: 400px;
   height: 420px;
-  /* background: linear-gradient(to right top, #d6a83c, #8a6b24); */
   background-color: rgba(201, 247, 179, 0.192);
   backdrop-filter: blur(1px);
   word-wrap: normal;
@@ -80,7 +73,7 @@
   align-items: center;
   border: 4px inset;
   border-radius: 50px;
-  box-shadow: 0px 3px 3px 2px inset rgba(128, 128, 128, 0.671);
+  box-shadow: 0px 3px 3px 2px inset rgba(128, 128, 128, 0.671); /* rgba(128, 128, 128, 0.671) */
   padding: 10px;
   z-index: 10;
 }
