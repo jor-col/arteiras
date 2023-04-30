@@ -12,12 +12,13 @@
   justify-content: space-around;
   flex-direction: row;
   gap: 10px;
-
+  box-shadow: 3px 3px 5px black;
 }
 
 .month {
   color: white;
   font-size: 8rem;
+  text-shadow: 3px 3px 5px black;
 }
 
 .info {
@@ -51,6 +52,20 @@
   gap: 15px;
 }
 
+.selector {
+  margin-top: 20px;
+}
+
+.selector select,
+.selector button {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #0F230F;
+  color: white;
+  border: 1.5px solid white;
+}
+
 @media only screen and (max-width: 800px) {
   .artist {
     margin: 5px 0;
@@ -65,8 +80,6 @@
     width: 200px;
     height: 320px;
   }
-
-
 
 }
 

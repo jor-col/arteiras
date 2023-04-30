@@ -71,12 +71,16 @@ export default function FeatArtist() {
             </Swiper>
             <div className={styles.info}>
               <div className={styles.infoHead}>
-                <h2>{e.artist}</h2>
-                <h3>{e.caption}</h3>
+                <h1>{e.artist}</h1>
+                <h2>{e.caption}</h2>
               </div>
               <div className={styles.infoContent}>
                 <p>{e.description}</p>
-                <a href={e.artist_url}>{e.artist_url}</a>
+                <a href={e.artist_url}>
+                  <p>
+                    {e.artist_url}
+                  </p>
+                </a>
               </div>
             </div>
           </div>
@@ -84,7 +88,7 @@ export default function FeatArtist() {
       }
 
       {slugMonth &&
-        <div>
+        <div className={styles.selector}>
           <select onChange={(e: any) => setSelMonth(e.target.value)}>
             {slugMonth.map((e: any) => <option key={e} value={e}>{month[Number(e)]}</option>)}
           </select>
