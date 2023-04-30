@@ -18,7 +18,7 @@
 
 .content img {
   object-fit: cover;
-  height: 500px;
+  height: 650px;
   width: 300px;
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
@@ -60,7 +60,7 @@
   box-shadow: inset 1px 1px 5px black;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .content {
     flex-direction: column;
     width: 100%;
