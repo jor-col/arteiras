@@ -44,10 +44,10 @@ export default function Home() {
         </div>
         <p>
           Welcome to Arteiras Gallery and Boutique, a vibrant creative space
-          owned and operated by local woman in the heart of New Orleans'
+          owned and operated by local woman in the heart of New Orleans&apos;
           Bywater neighborhood. Our gallery showcases the work of talented
           artists from diverse backgrounds, offering a unique and inspiring
-          window into the city's rich cultural heritage. Our boutique is a
+          window into the city&apos;s rich cultural heritage. Our boutique is a
           treasure trove of handmade crafts, jewelry, and textiles, lovingly
           crafted by local artisans. We are proud to be a part of the New
           Orleans community, and we invite you to come and discover the beauty
