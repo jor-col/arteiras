@@ -1,0 +1,105 @@
+.artist {
+  background-color: #0F230F;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin: 5px;
+  width: 90%;
+  min-width: 200px;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: 3px 3px 5px black;
+}
+
+.month {
+  color: white;
+  font-size: 8rem;
+  text-shadow: 3px 3px 5px black;
+}
+
+.info {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 500px;
+  text-align: center;
+}
+
+.info p {
+  text-align: center;
+}
+
+.artist a {
+  text-decoration: none;
+  color: white;
+}
+
+.infoHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.selector {
+  margin-top: 20px;
+}
+
+.selector select,
+.selector button {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #0F230F;
+  color: white;
+  border: 1.5px solid white;
+}
+
+@media only screen and (max-width: 800px) {
+  .artist {
+    margin: 5px 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.swiper,
+  .swiper::before,
+  .swiper * {
+    width: 200px;
+    height: 320px;
+  }
+
+
+
+}
+
+.swiper {
+  width: 400px;
+  height: 620px;
+  margin: 10px;
+}
+
+.swiper img {
+  object-fit: cover;
+  width: 400px;
+  height: 620px;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
