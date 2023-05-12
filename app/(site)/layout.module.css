@@ -23,6 +23,7 @@
   width: 50px;
   height: auto;
   margin-left: .5rem;
+  transform: rotate(45deg);
 }
 
 .navbar hr {
@@ -30,9 +31,19 @@
 }
 
 .navbar li a {
+  transition: 1s;
   text-decoration: none;
-  transition: .5s;
   color: white;
+}
+
+.navbar li {
+
+  transition: .5s;
+}
+
+.navbar li:hover {
+  transform: scaleZ(2);
+  transform: scale(1.15);
 }
 
 .navbar li:last-of-type {
@@ -46,10 +57,12 @@
 .pageContent {
   padding: 10px;
   padding-top: 100px;
+  margin: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
 }
 
 @media only screen and (max-width: 500px) {

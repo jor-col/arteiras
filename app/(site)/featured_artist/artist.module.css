@@ -1,5 +1,5 @@
 .artist {
-  background-color: #0F230F;
+  background-color: #0f230f;
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -12,13 +12,22 @@
   justify-content: space-around;
   flex-direction: row;
   gap: 10px;
-  box-shadow: 3px 3px 5px black;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.artist h1 {
+  font-size: 3rem;
+  text-shadow: 3px 3px 10px black;
+  margin: 20px;
 }
 
 .month {
-  color: white;
+  color: #0f230f;
   font-size: 8rem;
-  text-shadow: 3px 3px 5px black;
+  text-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5),
+    3px 3px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  margin-top: -40px;
 }
 
 .info {
@@ -64,6 +73,7 @@
   background-color: #0F230F;
   color: white;
   border: 1.5px solid white;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (max-width: 800px) {

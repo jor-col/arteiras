@@ -3,22 +3,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { getArtBySlug, getAllSlugs } from "@/sanity/sanity-utils";
 import Link from "next/link";
-import styles from "./artist.module.css";
-
+import styles from "../artist.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
-
 import { EffectCards } from "swiper";
 
 
 export default function FeatArtist() {
-  const [slug, setSlug] = useState<any>()
-  const [selMonth, setSelMonth] = useState<any>()
-  const [selYear, setSelYear] = useState<any>()
   const [artist, setArtist] = useState<any>()
   const [slugMonth, setSlugMonth] = useState<any>()
-  const [slugYear, setSlugYear] = useState<any>()
+  const [slugs, setSlugs] = useState<any>()
+  const [selSlugs, setSelSlug] = useState<any>()
+
 
   const month: any = {
     '01': "January",
@@ -37,34 +34,25 @@ export default function FeatArtist() {
 
   useEffect(() => {
     const fullSlug: any = window.location.pathname.split('/').at(-1)
-
-
-    getAllSlugs()
-      .then(allSlugs => {
-        const slugArr = allSlugs.map((e: any) => e.slug.current)
-
-        const year = slugArr.map((e: any) => e.split('-')[1]).filter((val: any, ind: any, arr: any) => arr.indexOf(val) === ind)
-        setSlugYear(year)
-        setSelYear(year[0])
-
-        const month = slugArr.map((e: any) => e.split('-')[0]).filter((val: any, ind: any, arr: any) => arr.indexOf(val) === ind).sort((a: any, b: any) => a - b)
-        setSlugMonth(month)
-        setSelMonth(month[0])
-      })
-      .catch(err => console.log(err))
     getArtBySlug(fullSlug)
       .then(all => {
-        setSlug(fullSlug.split('-')[0])
         setArtist(all[0].featured_artists)
       })
       .catch(err => console.log(err))
-
-  }, [slug])
+    getAllSlugs()
+      .then(allSlugs => {
+        const slugArr = allSlugs
+          .map((e: any) => e.slug.current)
+          .sort((a: any, b: any) => Number(b.split('-')[1] + b.split('-')[0]) - Number(a.split('-')[1] + a.split('-')[0]))
+        setSlugs(slugArr)
+        setSlugMonth(slugArr[0].split('-')[0])
+      })
+      .catch(err => console.log(err));
+  }, [])
 
   return (
     <>
-      {slugMonth && <h1 className={styles.month}>{month[slug]}</h1>}
-
+      {slugMonth && <h1 className={styles.month}>{month[slugMonth]}</h1>}
       {artist &&
         artist?.map((e: any, i: number) => (
           <div className={styles.artist} key={`${i + e.artist}`}>
@@ -94,21 +82,16 @@ export default function FeatArtist() {
         ))
       }
 
-      {slugMonth &&
+      {slugs &&
         <div className={styles.selector}>
-          <select name="month" id='year' onChange={(e: any) => setSelMonth(e.target.value)}>
-            {slugMonth.map((e: any) => <option key={e} value={e}>{month[e]}</option>)}
+          <select onChange={(e: any) => setSelSlug(e.target.value)}>
+            {slugs.map((e: any) => <option key={e} value={e}>{month[(e.split('-')[0])]} {e.split('-')[1]}</option>)}
           </select>
-
-          <select name='year' id='year' onChange={(e: any) => setSelYear(e.target.value)}>
-            {slugYear.map((e: any) => <option key={e} value={e}>{e}</option>)}
-          </select>
-          <Link href={`/featured_artist/${selMonth}-${selYear}`}>
+          <Link href={`/featured_artist/${selSlugs}`}>
             <button>Go</button>
           </Link>
         </div>
       }
-
     </>
   )
 }

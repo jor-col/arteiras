@@ -85,7 +85,7 @@ export default async function Schedule() {
                               // If the word is a URL, create a link element
                               return (
                                 <a
-                                  key={index}
+                                  key={index + word}
                                   href={word}
                                   target="_blank"
                                   rel="noopener noreferrer"
