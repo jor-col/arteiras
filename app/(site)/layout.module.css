@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  top: 0;
   position: fixed;
   width: 100%;
   z-index: 20;
@@ -55,18 +56,26 @@
 }
 
 .pageContent {
-  padding: 10px;
-  padding-top: 100px;
-  margin: 100px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  margin-bottom: 100px;
+  top: 100px;
 }
+
+
+
 
 @media only screen and (max-width: 500px) {
   .navbar ul {
     gap: 5px
   }
+
+  .pageContent {
+    top: 50px
+  }
+
 }
