@@ -13,11 +13,8 @@ import { EffectCards } from "swiper";
 
 
 export default function FeatArtist() {
-  const [selMonth, setSelMonth] = useState<any>()
-  const [selYear, setSelYear] = useState<any>()
   const [mostRecent, setMostRecent] = useState<any>()
   const [slugMonth, setSlugMonth] = useState<any>()
-  const [slugYear, setSlugYear] = useState<any>()
   const [slugs, setSlugs] = useState<any>()
   const [selSlugs, setSelSlug] = useState<any>()
 
@@ -37,18 +34,23 @@ export default function FeatArtist() {
   };
 
   useEffect(() => {
-    getArt().then(all => setMostRecent(all)).catch(err => console.log(err))
-    getAllSlugs().then(allSlugs => {
-      const slugArr = allSlugs
-        .map((e: any) => e.slug.current)
-        .sort((a: any, b: any) => Number(b.split('-')[1] + b.split('-')[0]) - Number(a.split('-')[1] + a.split('-')[0]))
-      setSlugs(slugArr)
-    });
+    getArt()
+      .then(all => setMostRecent(all))
+      .catch(err => console.log(err))
+    getAllSlugs()
+      .then(allSlugs => {
+        const slugArr = allSlugs
+          .map((e: any) => e.slug.current)
+          .sort((a: any, b: any) => Number(b.split('-')[1] + b.split('-')[0]) - Number(a.split('-')[1] + a.split('-')[0]))
+        setSlugs(slugArr)
+        setSlugMonth(month[Number(slugArr[0].split('-')[0])])
+      })
+      .catch(err => console.log(err));
   }, [])
 
   return (
     <>
-      {slugMonth && <h1 className={styles.month}>{month[Number(slugMonth[0])]}</h1>}
+      {slugMonth && <h1 className={styles.month}>{slugMonth}</h1>}
       {mostRecent && mostRecent?.featured_artists.map((e: any, i: number) => (
         <div className={styles.artist} key={`${i + e.artist}`}>
           <Swiper
@@ -83,7 +85,7 @@ export default function FeatArtist() {
           <select onChange={(e: any) => setSelSlug(e.target.value)}>
             {slugs.map((e: any) => <option key={e} value={e}>{month[Number(e.split('-')[0])]} {e.split('-')[1]}</option>)}
           </select>
-          <Link href={`/featured_artist/${selMonth}-${selYear}`}>
+          <Link href={`/featured_artist/${selSlugs}`}>
             <button>Go</button>
           </Link>
         </div>

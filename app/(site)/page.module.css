@@ -2,22 +2,20 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: radial-gradient(circle at center, #0F230Fc7 20%, black 200%);
-  border-radius: 10px;
-  /* outline: 2px solid #0F230F; */
   padding: 20px;
   text-align: center;
   max-width: 800px;
   gap: 10px;
-  box-shadow: inset 0px 0px 10px rgba(251, 255, 5, 0.458), 0 0 20px 10px #000000a6;
-  ;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #6eae6e99, #0F230Fc7);
+  box-shadow: 20px 20px 60px #0F230Fc7, -20px -20px 60px #6eae6ec7;
 }
 
 .main img {
   width: 100%;
   margin: auto;
   max-width: 1000px;
-  filter: drop-shadow(1px 5px 20px black)
+  filter: drop-shadow(1px 5px 20px black);
 }
 
 .main h1 {
@@ -43,7 +41,7 @@
   top: 0;
   padding: none;
   position: fixed;
-  z-index: -5;
+  z-index: -1;
 }
 
 .info {
@@ -69,17 +67,18 @@
   height: 30px;
   width: 30px;
   margin: 5px;
-  background-color: rgb(239, 211, 127);
+  background-color: #efd380;
   color: #0F230F;
   padding: 4px;
   border-radius: 5px;
   outline: 1px solid #0F230F;
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
 }
 
 .imgs:hover {
   box-shadow: inset 0px 0px 5px black;
 }
+
 
 @media only screen and (max-width: 600px) {
   .video {
