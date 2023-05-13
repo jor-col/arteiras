@@ -69,9 +69,9 @@ export default async function Schedule() {
             <div key={el + i} className={styles.cardBgBox}>
               <div className={styles.cardBg}>
                 <div className={styles.card}>
-                  <h1>Event</h1>
-                  <span>{el.event}</span>
-                  <h2>Start</h2>
+                  <h1>{el.event}</h1>
+                  {/* <span>{el.event}</span> */}
+                  <h2>Date</h2>
                   <span>{moment(el.start).format("MMM Do YYYY, h:mm a")}</span>
                   <h2>End</h2>
                   <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
