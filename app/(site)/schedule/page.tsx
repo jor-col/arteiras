@@ -72,9 +72,10 @@ export default async function Schedule() {
                   <h1>{el.event}</h1>
                   {/* <span>{el.event}</span> */}
                   <h2>Date</h2>
-                  <span>{moment(el.start).format("MMM Do YYYY, h:mm a")}</span>
-                  <h2>End</h2>
-                  <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
+                  <span>{moment(el.start).format("MMM Do YYYY")}</span>
+                  <span>{`${moment(el.start).format("h:mm a")} - ${moment(
+                    el.end
+                  ).format("h:mm a")}`}</span>
                   <h2>Location</h2>
                   <span>{el.location ? el.location : "Arteiras Gallery"}</span>
                   {el.description && (
