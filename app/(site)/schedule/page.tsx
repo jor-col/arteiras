@@ -56,8 +56,8 @@ export default async function Schedule() {
         </b>
       </h1>
       {/* <div className={styles.borderBoxBg}> */}
-      <div className={styles.borderBoxGlass}>
-        <div className={styles.borderBox}>
+      <div className={styles.borderBoxBg}>
+        <div className={styles.borderBoxGl}>
           {calendar &&
             calendar.slice(0, 6)?.map((el: any, i: number) => (
               <div key={el + i} className={styles.cardBgBox}>
@@ -112,10 +112,10 @@ export default async function Schedule() {
 }
 
 //{
-  /* <-- renders entire google calendar, limited styling options --> */
+/* <-- renders entire google calendar, limited styling options --> */
 //}
 //{
-  /* <div style={{ width: "1300px", height: "790px" }}>
+/* <div style={{ width: "1300px", height: "790px" }}>
 <iframe
   src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=YXJ0ZWlyYXNnYWxsZXJ5QGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679"
   style={{
@@ -142,7 +142,7 @@ export default async function Schedule() {
 //   .catch((err: any) => console.error("error:" + err));
 
 //{
-  /* <button
+/* <button
         onClick={() => {
           <div style={{ width: "1300px", height: "790px" }}>
             <iframe
