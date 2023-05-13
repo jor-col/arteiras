@@ -23,13 +23,15 @@ export const getArt = async (): Promise<Art> => {
   );
 };
 
+/**
+ * 
+ * @param slug :string
+ * @returns Promise
+ */
 export const getArtBySlug = async (slug:string): Promise<any> => {
-  // grabs the single newest Art document
+  // grabs the single Art by passed Slug document
   return createClient(clientConfig).fetch(
     groq`*[slug.current == $slug]{
-      _id,
-      _createdAt,
-      month,
       "slug": slug.current,
       "featured_artists": featured_artists.content[]{
         artist,
