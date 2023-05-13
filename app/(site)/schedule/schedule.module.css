@@ -32,11 +32,10 @@
 } */
 
 .borderBoxBg {
-  /* background-color: #0f230fa9; */
-  background-image: url("../../../public/photo-1486551937199-baf066858de7.jfif");
-  /* background: linear-gradient(to right top, #f5c14742, #5e45096c); */
+  background: radial-gradient(#6eae6e99 10%, #0F230Fc7 90%);
   border-radius: 10px;
-  /* padding: 20px; */
+  backdrop-filter: blur(10px);
+  padding: 20px;
   color: white;
   margin: 5px;
   width: 90%;
@@ -46,27 +45,11 @@
   align-items: flex-start;
   justify-content: space-around;
   flex-direction: row;
-  gap: 10px;
+  gap: 30px;
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.borderBoxGl {
-  background-color: #0f230fa9;
-  backdrop-filter: blur(20px);
-  border-radius: 10px;
-  padding: 20px;
-  color: white;
-  /* margin: 5px; */
-  /* width: 90%; */
-  min-width: 200px;
-  max-width: 1000px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  flex-direction: row;
-  gap: 10px;
-  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
-}
+
 
 .cardBgBox {
   position: relative;

@@ -5,6 +5,12 @@ import moment from "moment";
 import ical from "ical.js";
 import styles from "./schedule.module.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import { EffectCards } from "swiper";
+
 import "dotenv/config";
 import Link from "next/link";
 
@@ -57,53 +63,49 @@ export default async function Schedule() {
       </h1>
       {/* <div className={styles.borderBoxBg}> */}
       <div className={styles.borderBoxBg}>
-        <div className={styles.borderBoxGl}>
-          {calendar &&
-            calendar.slice(0, 6)?.map((el: any, i: number) => (
-              <div key={el + i} className={styles.cardBgBox}>
-                <div className={styles.cardBg}>
-                  <div className={styles.card}>
-                    <h1>Event</h1>
-                    <span>{el.event}</span>
-                    <h2>Start</h2>
-                    <span>
-                      {moment(el.start).format("MMM Do YYYY, h:mm a")}
-                    </span>
-                    <h2>End</h2>
-                    <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
-                    <h2>Location</h2>
-                    <span>
-                      {el.location ? el.location : "Arteiras Gallery"}
-                    </span>
-                    {el.description && (
-                      <>
-                        <h2>Description</h2>
-                        {el.description
-                          .split(/\s+/g)
-                          .map((word: any, index: number) => {
-                            if (/\bhttps?:\/\/\S+\b/.test(word)) {
-                              // If the word is a URL, create a link element
-                              return (
-                                <a
-                                  key={index + word}
-                                  href={word}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {word}
-                                </a>
-                              );
-                            } else {
-                              return <></>;
-                            }
-                          })}
-                      </>
-                    )}
-                  </div>
+        {/* <div className={styles.borderBoxGl}> */}
+        {calendar &&
+          calendar.slice(0, 6)?.map((el: any, i: number) => (
+            <div key={el + i} className={styles.cardBgBox}>
+              <div className={styles.cardBg}>
+                <div className={styles.card}>
+                  <h1>Event</h1>
+                  <span>{el.event}</span>
+                  <h2>Start</h2>
+                  <span>{moment(el.start).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>End</h2>
+                  <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>Location</h2>
+                  <span>{el.location ? el.location : "Arteiras Gallery"}</span>
+                  {el.description && (
+                    <>
+                      <h2>Description</h2>
+                      {el.description
+                        .split(/\s+/g)
+                        .map((word: any, index: number) => {
+                          if (/\bhttps?:\/\/\S+\b/.test(word)) {
+                            // If the word is a URL, create a link element
+                            return (
+                              <a
+                                key={index + word}
+                                href={word}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {word}
+                              </a>
+                            );
+                          } else {
+                            return <></>;
+                          }
+                        })}
+                    </>
+                  )}
                 </div>
               </div>
-            ))}
-        </div>
+            </div>
+          ))}
+        {/* </div> */}
       </div>
       {/* </div> */}
       <CalendarButton />
