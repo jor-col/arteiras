@@ -5,6 +5,12 @@ import moment from "moment";
 import ical from "ical.js";
 import styles from "./schedule.module.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import { EffectCards } from "swiper";
+
 import "dotenv/config";
 import Link from "next/link";
 
@@ -56,54 +62,50 @@ export default async function Schedule() {
         </b>
       </h1>
       {/* <div className={styles.borderBoxBg}> */}
-      <div className={styles.borderBoxGlass}>
-        <div className={styles.borderBox}>
-          {calendar &&
-            calendar.slice(0, 6)?.map((el: any, i: number) => (
-              <div key={el + i} className={styles.cardBgBox}>
-                <div className={styles.cardBg}>
-                  <div className={styles.card}>
-                    <h1>Event</h1>
-                    <span>{el.event}</span>
-                    <h2>Start</h2>
-                    <span>
-                      {moment(el.start).format("MMM Do YYYY, h:mm a")}
-                    </span>
-                    <h2>End</h2>
-                    <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
-                    <h2>Location</h2>
-                    <span>
-                      {el.location ? el.location : "Arteiras Gallery"}
-                    </span>
-                    {el.description && (
-                      <>
-                        <h2>Description</h2>
-                        {el.description
-                          .split(/\s+/g)
-                          .map((word: any, index: number) => {
-                            if (/\bhttps?:\/\/\S+\b/.test(word)) {
-                              // If the word is a URL, create a link element
-                              return (
-                                <a
-                                  key={index + word}
-                                  href={word}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {word}
-                                </a>
-                              );
-                            } else {
-                              return <></>;
-                            }
-                          })}
-                      </>
-                    )}
-                  </div>
+      <div className={styles.borderBoxBg}>
+        {/* <div className={styles.borderBoxGl}> */}
+        {calendar &&
+          calendar.slice(0, 6)?.map((el: any, i: number) => (
+            <div key={el + i} className={styles.cardBgBox}>
+              <div className={styles.cardBg}>
+                <div className={styles.card}>
+                  <h1>Event</h1>
+                  <span>{el.event}</span>
+                  <h2>Start</h2>
+                  <span>{moment(el.start).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>End</h2>
+                  <span>{moment(el.end).format("MMM Do YYYY, h:mm a")}</span>
+                  <h2>Location</h2>
+                  <span>{el.location ? el.location : "Arteiras Gallery"}</span>
+                  {el.description && (
+                    <>
+                      <h2>Description</h2>
+                      {el.description
+                        .split(/\s+/g)
+                        .map((word: any, index: number) => {
+                          if (/\bhttps?:\/\/\S+\b/.test(word)) {
+                            // If the word is a URL, create a link element
+                            return (
+                              <a
+                                key={index + word}
+                                href={word}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {word}
+                              </a>
+                            );
+                          } else {
+                            return <></>;
+                          }
+                        })}
+                    </>
+                  )}
                 </div>
               </div>
-            ))}
-        </div>
+            </div>
+          ))}
+        {/* </div> */}
       </div>
       {/* </div> */}
       <CalendarButton />
@@ -112,10 +114,10 @@ export default async function Schedule() {
 }
 
 //{
-  /* <-- renders entire google calendar, limited styling options --> */
+/* <-- renders entire google calendar, limited styling options --> */
 //}
 //{
-  /* <div style={{ width: "1300px", height: "790px" }}>
+/* <div style={{ width: "1300px", height: "790px" }}>
 <iframe
   src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=YXJ0ZWlyYXNnYWxsZXJ5QGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679"
   style={{
@@ -142,7 +144,7 @@ export default async function Schedule() {
 //   .catch((err: any) => console.error("error:" + err));
 
 //{
-  /* <button
+/* <button
         onClick={() => {
           <div style={{ width: "1300px", height: "790px" }}>
             <iframe

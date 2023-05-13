@@ -1,14 +1,21 @@
-.borderBoxBg {
-  width: 490px;
-  border: 3px rgba(165, 165, 165, 0.527) double;
-  border-radius: 50px;
-  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
-  display: grid;
-  justify-items: center;
-  gap: 5px;
-}
+/* .borderBoxBg {
+  background-color: #0f230f;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin: 5px;
+  width: 90%;
+  min-width: 200px;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
+} */
 
-.borderBoxGlass {
+/* .borderBoxGlass {
   width: 490px;
   height: auto;
   justify-content: center;
@@ -22,20 +29,27 @@
   justify-items: center;
   margin: .5rem;
   gap: 5px;
+} */
+
+.borderBoxBg {
+  background: radial-gradient(#6eae6e99 10%, #0F230Fc7 90%);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  color: white;
+  margin: 5px;
+  width: 90%;
+  min-width: 200px;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 30px;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.borderBox {
-  width: 490px;
-  /* height: auto; */
-  background-color: rgba(38, 71, 32, 0.438);
-  border: 1px rgba(255, 254, 254, 0.151) solid;
-  backdrop-filter: blur(5px);
-  border-radius: 50px;
-  box-shadow: 4px 8px 12px 2px rgba(24, 24, 24, 0.39);
-  display: grid;
-  justify-items: center;
-  padding: 12px 25px;
-}
+
 
 .cardBgBox {
   position: relative;
