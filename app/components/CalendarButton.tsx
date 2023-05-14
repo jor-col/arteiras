@@ -9,8 +9,9 @@ const CalendarButton = () => {
 
   return (
     <>
-      <h1>Calendar Button</h1>
-      <button onClick={() => setShowCal(!showCal)}>View Calendar</button>
+      <button style={{ margin: "1rem" }} onClick={() => setShowCal(!showCal)}>
+        View Calendar
+      </button>
       {showCal ? <Calendar /> : <></>}
     </>
   );
