@@ -52,12 +52,17 @@
 
 
 .cardBgBox {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
   height: 420px;
   width: 400px;
   margin: 1.7rem 0;
-  background-image: url("../../../public/image-3.webp");
+  /* background-image: url("../../../public/image-3.webp"); */
+  backdrop-filter: blur(12px);
+  border: 2px inset rgba(179, 122, 0, 0.568);
   box-shadow: 4px 7px 15px 2px rgb(19, 19, 19);
 }
 
@@ -134,4 +139,23 @@
 
 .test {
   color: rgb(1, 1, 1);
+}
+
+.swiper {
+  width: 400px;
+  height: 620px;
+  margin: 10px;
+}
+
+.swiper img {
+  object-fit: cover;
+  width: 400px;
+  height: 620px;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 18px; */
 }
