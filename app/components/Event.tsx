@@ -16,10 +16,21 @@ const Event = (el: any) => {
         "h:mm a"
       )}`}</span>
       <h2>Location</h2>
-      <span>{el.location ? el.location : "Arteiras Gallery"}</span>
+      <a
+        href={
+          el.location
+            ? `http://maps.google.com/maps?q=${el.location
+                .split(" ")
+                .join("+")}`
+            : `http://maps.google.com/maps?q=4011+St.+Claude+Ave,+New+Orleans,+LA`
+        }
+        target="blank"
+        rel="noopener noreferrer"
+      >
+        {el.location ? el.location : "Arteiras Gallery"}
+      </a>
       {el.description && (
         <>
-          <h2>Description</h2>
           {el.description.split(/\s+/g).map((word: any, index: number) => {
             if (/\bhttps?:\/\/\S+\b/.test(word)) {
               // If the word is a URL, create a link element
@@ -30,7 +41,7 @@ const Event = (el: any) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {word}
+                  Event Details
                 </a>
               );
             } else {
