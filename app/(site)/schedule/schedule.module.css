@@ -1,14 +1,21 @@
-.borderBoxBg {
-  width: 490px;
-  border: 3px rgba(165, 165, 165, 0.527) double;
-  border-radius: 50px;
-  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
-  display: grid;
-  justify-items: center;
-  gap: 5px;
-}
+/* .borderBoxBg {
+  background-color: #0f230f;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin: 5px;
+  width: 90%;
+  min-width: 200px;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
+} */
 
-.borderBoxGlass {
+/* .borderBoxGlass {
   width: 490px;
   height: auto;
   justify-content: center;
@@ -22,28 +29,41 @@
   justify-items: center;
   margin: .5rem;
   gap: 5px;
+} */
+
+.borderBoxBg {
+  background: radial-gradient(#6eae6e99 10%, #0F230Fc7 90%);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  color: white;
+  margin: 15px;
+  width: 90%;
+  height: 36rem;
+  min-width: 200px;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 30px;
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.borderBox {
-  width: 490px;
-  /* height: auto; */
-  background-color: rgba(38, 71, 32, 0.438);
-  border: 1px rgba(255, 254, 254, 0.151) solid;
-  backdrop-filter: blur(5px);
-  border-radius: 50px;
-  box-shadow: 4px 8px 12px 2px rgba(24, 24, 24, 0.39);
-  display: grid;
-  justify-items: center;
-  padding: 12px 25px;
-}
+
 
 .cardBgBox {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
   height: 420px;
   width: 400px;
   margin: 1.7rem 0;
-  background-image: url("../../../public/image-3.webp");
+  /* background-image: url("../../../public/image-3.webp"); */
+  backdrop-filter: blur(12px);
+  border: 2px inset rgba(179, 122, 0, 0.568);
   box-shadow: 4px 7px 15px 2px rgb(19, 19, 19);
 }
 
@@ -64,7 +84,7 @@
 .card {
   width: 400px;
   height: 420px;
-  background-color: rgba(201, 247, 179, 0.192);
+  background-color: rgba(167, 206, 149, 0.192);
   backdrop-filter: blur(1px);
   word-wrap: normal;
   display: flex;
@@ -96,21 +116,28 @@
 }
 
 .card a {
+  font-family: lobster, 'Courier New', Courier, monospace;
+  font-size: larger;
+  font: 700;
   z-index: 100;
   word-break: break-word;
   justify-content: center;
   text-align: center;
+  margin-bottom: .8rem;
 }
 
 .card h2 {
   text-decoration: underline;
   font-weight: bold;
-  margin-top: .7rem;
+  margin: .8rem;
 }
 
 .card h1 {
   text-decoration: underline;
   font-weight: bold;
+  /* word-break: break-word;
+  word-wrap: normal; */
+  text-align: center;
 }
 
 .mapUrlBox {
@@ -121,3 +148,27 @@
 .test {
   color: rgb(1, 1, 1);
 }
+
+.swiper {
+  width: 400px;
+  height: 620px;
+  margin: 10px;
+}
+
+.swiper img {
+  object-fit: cover;
+  width: 400px;
+  height: 620px;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70% !important;
+  /* border-radius: 18px; */
+}
+
+/* .customSwiperWrapper {
+  height: 70% !important;
+} */

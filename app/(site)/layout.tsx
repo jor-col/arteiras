@@ -34,10 +34,6 @@ export default function RootLayout({
             </li>
             <hr></hr>
             <li>
-              <Link href={`/instagram_feed`}>Feed</Link>
-            </li>
-            <hr></hr>
-            <li>
               <Link href="/schedule">Schedule</Link>
             </li>
             <hr></hr>
@@ -46,14 +42,12 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        <div className={styles.pageContent}>
-          {children}
-        </div>
+        <div className={styles.pageContent}>{children}</div>
         <section>
-          <div className='air air1'></div>
-          <div className='air air2'></div>
-          <div className='air air3'></div>
-          <div className='air air4'></div>
+          <div className="air air1"></div>
+          <div className="air air2"></div>
+          <div className="air air3"></div>
+          <div className="air air4"></div>
         </section>
       </body>
     </html>
