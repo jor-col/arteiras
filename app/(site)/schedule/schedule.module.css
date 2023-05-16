@@ -37,8 +37,9 @@
   backdrop-filter: blur(10px);
   padding: 20px;
   color: white;
-  margin: 5px;
+  margin: 15px;
   width: 90%;
+  height: 36rem;
   min-width: 200px;
   max-width: 1000px;
   display: flex;
@@ -83,7 +84,7 @@
 .card {
   width: 400px;
   height: 420px;
-  background-color: rgba(201, 247, 179, 0.192);
+  background-color: rgba(167, 206, 149, 0.192);
   backdrop-filter: blur(1px);
   word-wrap: normal;
   display: flex;
@@ -115,21 +116,28 @@
 }
 
 .card a {
+  font-family: lobster, 'Courier New', Courier, monospace;
+  font-size: larger;
+  font: 700;
   z-index: 100;
   word-break: break-word;
   justify-content: center;
   text-align: center;
+  margin-bottom: .8rem;
 }
 
 .card h2 {
   text-decoration: underline;
   font-weight: bold;
-  margin-top: .7rem;
+  margin: .8rem;
 }
 
 .card h1 {
   text-decoration: underline;
   font-weight: bold;
+  /* word-break: break-word;
+  word-wrap: normal; */
+  text-align: center;
 }
 
 .mapUrlBox {
@@ -143,7 +151,7 @@
 
 .swiper {
   width: 400px;
-  height: 620px;
+  height: 430px;
   margin: 10px;
 }
 
@@ -157,5 +165,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 70% !important;
   /* border-radius: 18px; */
 }
+
+/* .swiperWrapper */
+
+/* .customSwiperWrapper {
+  height: 70% !important;
+} */
