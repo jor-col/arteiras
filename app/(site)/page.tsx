@@ -36,7 +36,7 @@ export default function Home() {
             <h3>504-354-1663</h3>
           </div>
           <div className={styles.info_item}>
-            <a href="tel:+1504-354-1663">
+            <a href="https://www.instagram.com/arteirasgallery/">
               <FiInstagram className={styles.imgs} />
             </a>
             <h3>@arteirasgallery</h3>
