@@ -11,7 +11,7 @@ const Event = (el: any) => {
       <h1>{el.event}</h1>
       {/* <span>{el.event}</span> */}
       <h2>Date</h2>
-      <span>{moment(el.start).format("MMM Do YYYY")}</span>
+      <span>{moment(el.start).format("MMM D YYYY")}</span>
       <span>{`${moment(el.start).format("h:mm a")} - ${moment(el.end).format(
         "h:mm a"
       )}`}</span>
