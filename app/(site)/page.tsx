@@ -36,7 +36,7 @@ export default function Home() {
             <h3>504-354-1663</h3>
           </div>
           <div className={styles.info_item}>
-            <a href="https://www.instagram.com/arteirasgallery/">
+            <a href="https://www.instagram.com/arteirasgallery/" target="_blank">
               <FiInstagram className={styles.imgs} />
             </a>
             <h3>@arteirasgallery</h3>
