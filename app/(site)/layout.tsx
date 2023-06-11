@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <nav className={styles.navbar}>
           <div>
-            <Link href="/">
+            <Link href="/" style={{ zIndex: "10" }}>
               <Image
                 src="/Flower-Icon.webp"
                 alt=""
