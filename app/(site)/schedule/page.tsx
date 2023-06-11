@@ -37,6 +37,7 @@ export default async function Schedule() {
         // console.log("VEVENT", vevent.jCal.description);
         // console.log("EVENT", event.component);
         // console.log("VEVENT", vevent.jCal);
+        console.log("EVENT:", event);
         return {
           event: event.summary,
           start: new Date(event.startDate.toJSDate().toString()),
