@@ -63,7 +63,7 @@ export default function FeatArtist() {
               modules={[EffectCards]}
               className={styles.swiper}
             >
-              {e.images.map((image: any) => (
+              {e.imges.length && e.images.map((image: any) => (
                 <SwiperSlide
                   key={image.asset.url}
                   className={styles.swiperSlide}
