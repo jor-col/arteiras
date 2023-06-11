@@ -8,6 +8,7 @@ export const getArt = async (): Promise<Art> => {
     groq`*[_type == "art"] | order(_createdAt desc)[0] {
       _id,
       _createdAt,
+      name,
       month,
       "slug": slug.current,
       "featured_artists": featured_artists.content[]{
@@ -24,7 +25,7 @@ export const getArt = async (): Promise<Art> => {
 };
 
 /**
- * 
+ *
  * @param slug :string
  * @returns Promise
  */
