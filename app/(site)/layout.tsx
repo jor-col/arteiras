@@ -17,13 +17,17 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav className={styles.navbar}>
-          <Image
-            src="/Flower-Icon.webp"
-            alt=""
-            width={50}
-            height={50}
-            priority
-          />
+          <div>
+            <Link href="/">
+              <Image
+                src="/Flower-Icon.webp"
+                alt=""
+                width={50}
+                height={50}
+                priority
+              />
+            </Link>
+          </div>
           <ul>
             <li>
               <Link href="/">Home</Link>

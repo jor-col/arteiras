@@ -151,7 +151,7 @@
 
 .swiper {
   width: 400px;
-  height: 620px;
+  height: 430px;
   margin: 10px;
 }
 
@@ -168,6 +168,8 @@
   height: 70% !important;
   /* border-radius: 18px; */
 }
+
+/* .swiperWrapper */
 
 /* .customSwiperWrapper {
   height: 70% !important;
