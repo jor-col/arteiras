@@ -38,7 +38,7 @@
 }
 
 .navbar li {
-
+  text-align: center;
   transition: .5s;
 }
 
@@ -69,7 +69,12 @@
 
 @media only screen and (max-width: 500px) {
   .navbar ul {
-    gap: 5px
+    gap: 5px;
+    right: 0px;
+  }
+
+  .navbar a {
+    font-size: small;
   }
 
   .pageContent {

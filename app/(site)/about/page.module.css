@@ -1,5 +1,6 @@
 .content {
-  background-color: #0F230F;
+  background: radial-gradient(#6eae6e99 10%, #0F230Fc7 90%);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -27,7 +28,10 @@
 
 .info h1 {
   font-size: 4rem;
-  margin: 20px
+  color: white;
+  margin: 20px;
+  text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+    3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .info {
