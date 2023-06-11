@@ -64,7 +64,7 @@ export default function FeatArtist() {
             >
               {e.images.map((image: any) => (
                 <SwiperSlide key={image.asset.url} className={styles.swiperSlide}>
-                  <Image src={image.asset.url} alt="" width={100} height={100} />
+                  <Image src={image.asset.url} alt="" width={1000} height={1000} />
                 </SwiperSlide>
               ))}
             </Swiper>
