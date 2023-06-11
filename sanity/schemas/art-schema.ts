@@ -4,6 +4,11 @@ const art = {
   type: "document",
   fields: [
     {
+      name: "name",
+      title: "Name",
+      type: "string"
+    },
+    {
       name: "month",
       title: "Month",
       type: "date",
