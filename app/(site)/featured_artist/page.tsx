@@ -57,13 +57,14 @@ export default function FeatArtist() {
       {mostRecent &&
         mostRecent?.featured_artists.map((e: any, i: number) => (
           <div className={styles.artist} key={`${i + e.artist}`}>
-            <Swiper
+            {e.images?.length &&
+             <Swiper
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
               className={styles.swiper}
             >
-              {e.imges.length && e.images.map((image: any) => (
+              { e.images.map((image: any) => (
                 <SwiperSlide
                   key={image.asset.url}
                   className={styles.swiperSlide}
@@ -76,7 +77,7 @@ export default function FeatArtist() {
                   />
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper>}
             <div className={styles.info}>
               <div className={styles.infoHead}>
                 <h1>{e.artist}</h1>
