@@ -25,7 +25,7 @@ const Events = (calendar: Calendar[]) => {
   const [filteredCalendar, setfilteredCalendar] = useState<Calendar[]>(
     [] as Calendar[]
   );
-  console.log(calendar);
+  console.log("INSIDE EVENT:", calendar);
   console.log("Date:", today);
   console.log("Month:", month);
   console.log("Filtered Calendar:", filteredCalendar);

@@ -11,12 +11,11 @@ import "swiper/css/effect-cards";
 
 import { EffectCards } from "swiper";
 
-
 export default function FeatArtist() {
-  const [mostRecent, setMostRecent] = useState<any>()
-  const [slugMonth, setSlugMonth] = useState<any>()
-  const [slugs, setSlugs] = useState<any>()
-  const [selSlugs, setSelSlug] = useState<any>()
+  const [mostRecent, setMostRecent] = useState<any>();
+  const [slugMonth, setSlugMonth] = useState<any>();
+  const [slugs, setSlugs] = useState<any>();
+  const [selSlugs, setSelSlug] = useState<any>();
 
   const month: any = {
     1: "January",
@@ -35,61 +34,78 @@ export default function FeatArtist() {
 
   useEffect(() => {
     getArt()
-      .then(all => setMostRecent(all))
-      .catch(err => console.log(err))
+      .then((all) => setMostRecent(all))
+      .catch((err) => console.log(err));
     getAllSlugs()
-      .then(allSlugs => {
+      .then((allSlugs) => {
         const slugArr = allSlugs
           .map((e: any) => e.slug.current)
-          .sort((a: any, b: any) => Number(b.split('-')[1] + b.split('-')[0]) - Number(a.split('-')[1] + a.split('-')[0]))
-        setSlugs(slugArr)
-        setSlugMonth(month[Number(slugArr[0].split('-')[0])])
+          .sort(
+            (a: any, b: any) =>
+              Number(b.split("-")[1] + b.split("-")[0]) -
+              Number(a.split("-")[1] + a.split("-")[0])
+          );
+        setSlugs(slugArr);
+        setSlugMonth(month[Number(slugArr[0].split("-")[0])]);
       })
-      .catch(err => console.log(err));
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
       {slugMonth && <h1 className={styles.month}>{slugMonth}</h1>}
-      {mostRecent && mostRecent?.featured_artists.map((e: any, i: number) => (
-        <div className={styles.artist} key={`${i + e.artist}`}>
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className={styles.swiper}
-          >
-            {e.images.map((image: any) => (
-              <SwiperSlide key={image.asset.url} className={styles.swiperSlide}>
-                <Image src={image.asset.url} alt="" width={100} height={100} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className={styles.info}>
-            <div className={styles.infoHead}>
-              <h1>{e.artist}</h1>
-              <h2>{e.caption}</h2>
-            </div>
-            <div className={styles.infoContent}>
-              <p>{e.description}</p>
-              <a href={e.artist_url}>
-                <p>{e.artist_url}</p>
-              </a>
+      {mostRecent &&
+        mostRecent?.featured_artists.map((e: any, i: number) => (
+          <div className={styles.artist} key={`${i + e.artist}`}>
+            <Swiper
+              effect={"cards"}
+              grabCursor={true}
+              modules={[EffectCards]}
+              className={styles.swiper}
+            >
+              {e.images.map((image: any) => (
+                <SwiperSlide
+                  key={image.asset.url}
+                  className={styles.swiperSlide}
+                >
+                  <Image
+                    src={image.asset.url}
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className={styles.info}>
+              <div className={styles.infoHead}>
+                <h1>{e.artist}</h1>
+                <h2>{e.caption}</h2>
+              </div>
+              <div className={styles.infoContent}>
+                <p>{e.description}</p>
+                <a href={e.artist_url}>
+                  <p>{e.artist_url}</p>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {slugs &&
+      {slugs && (
         <div className={styles.selector}>
           <select onChange={(e: any) => setSelSlug(e.target.value)}>
-            {slugs.map((e: any) => <option key={e} value={e}>{month[Number(e.split('-')[0])]} {e.split('-')[1]}</option>)}
+            {slugs.map((e: any) => (
+              <option key={e} value={e}>
+                {month[Number(e.split("-")[0])]} {e.split("-")[1]}
+              </option>
+            ))}
           </select>
           <Link href={`/featured_artist/${selSlugs}`}>
             <button>Go</button>
           </Link>
         </div>
-      }
+      )}
     </>
   );
 }
