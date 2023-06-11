@@ -1,9 +1,4 @@
 @font-face {
-  font-family: inter;
-  src: url('inter.ttf');
-}
-
-@font-face {
   font-family: lobster;
   src: url('./lob.ttf');
 }
@@ -53,7 +48,7 @@ a,
 p,
 li {
   font-size: medium;
-  font-family: inter, 'Courier New', Courier, monospace;
+  font-family: 'Times New Roman', Times, serif, 'Courier New', Courier, monospace;
 }
 
 ol,

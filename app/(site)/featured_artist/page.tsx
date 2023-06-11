@@ -71,8 +71,8 @@ export default function FeatArtist() {
                   <Image
                     src={image.asset.url}
                     alt=""
-                    width={100}
-                    height={100}
+                    width={1000}
+                    height={1000}
                   />
                 </SwiperSlide>
               ))}
