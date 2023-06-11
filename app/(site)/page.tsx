@@ -16,30 +16,30 @@ export default function Home() {
         <div className={styles.info}>
           <div className={styles.info_item}>
             <a
-              href="maps:daddr=4011 St Claude Ave New Orleans, LA 70117&saddr=Current%20Location"
+              href="https://www.google.com/maps/place/4011+St+Claude+Ave,+New+Orleans,+LA+70117/@29.9658582,-90.0350277,17z/data=!3m1!4b1!4m6!3m5!1s0x8620a7d3a9d58463:0xd56b34808419f089!8m2!3d29.9658582!4d-90.0350277!16s%2Fg%2F11b8v5z0mf?hl=en&entry=ttu"
               target="_blank"
             >
               <FiMap className={styles.imgs} />
-            </a>
             <h3>4011 St. Claude Ave, New Orleans, LA</h3>
+            </a>
           </div>
           <div className={styles.info_item}>
             <a href="mailto:ArteirasGallery@gmail.com">
               <FiMail className={styles.imgs} />
-            </a>
             <h3>ArteirasGallery@gmail.com</h3>
+            </a>
           </div>
           <div className={styles.info_item}>
             <a href="tel:+1504-354-1663">
               <FiPhoneCall className={styles.imgs} />
-            </a>
             <h3>504-354-1663</h3>
+            </a>
           </div>
           <div className={styles.info_item}>
             <a href="https://www.instagram.com/arteirasgallery/" target="_blank">
               <FiInstagram className={styles.imgs} />
-            </a>
             <h3>@arteirasgallery</h3>
+            </a>
           </div>
         </div>
         <p>

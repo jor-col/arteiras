@@ -59,7 +59,12 @@
   align-items: center;
   width: 50%;
 }
-
+.info_item a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .info_item h3 {
   font-size: large;
   margin-left: 10px
