@@ -1,8 +1,7 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
-import { ImSpinner2 } from "react-icons/im";
+import React, { useState } from "react";
 import Calendar from "./Calendar";
-import Loading from "./Loading";
+
 
 const CalendarButton = () => {
   const [showCal, setShowCal] = useState<boolean>(false);
