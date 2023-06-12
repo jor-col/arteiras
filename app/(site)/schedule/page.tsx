@@ -40,11 +40,6 @@ export default async function Schedule() {
 
   return (
     <>
-      <h1>
-        <b>
-          <u>Schedule</u>
-        </b>
-      </h1>      
       {calendar && <Events {...calendar.reverse()} />}
       <CalendarButton />
     </>

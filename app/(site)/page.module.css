@@ -10,6 +10,9 @@
   background: linear-gradient(180deg, #6eae6e99, #0F230Fc7);
   box-shadow: 20px 20px 60px #0F230Fc7, -20px -20px 60px #6eae6ec7;
 }
+div.main{
+  margin-top: 15px
+}
 
 .main img {
   width: 100%;
