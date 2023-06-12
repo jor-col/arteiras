@@ -52,7 +52,7 @@ export default function FeatArtist() {
 
   return (
     <>
-      {slugMonth && <h1 className={styles.month}>{month[slugMonth]}</h1>}
+
       {artist &&
         artist?.map((e: any, i: number) => (
           <div className={styles.artist} key={`${i + e.artist}`}>

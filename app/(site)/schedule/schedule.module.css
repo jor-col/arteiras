@@ -1,35 +1,4 @@
-/* .borderBoxBg {
-  background-color: #0f230f;
-  border-radius: 10px;
-  padding: 20px;
-  color: white;
-  margin: 5px;
-  width: 90%;
-  min-width: 200px;
-  max-width: 1000px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  flex-direction: row;
-  gap: 10px;
-  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
-} */
 
-/* .borderBoxGlass {
-  width: 490px;
-  height: auto;
-  justify-content: center;
-  background-image: url("../../../public/scribble-light.png");
-  background-color: rgb(4, 24, 1);
-  border: 1px rgba(197, 197, 197, 0.507) double;
-  backdrop-filter: blur(40px);
-  border-radius: 50px;
-  box-shadow: 1px 1px 10px 1px inset rgba(128, 128, 128, 0.39);
-  display: grid;
-  justify-items: center;
-  margin: .5rem;
-  gap: 5px;
-} */
 
 .borderBoxBg {
   background: radial-gradient(#6eae6e99 10%, #0F230Fc7 90%);
@@ -50,7 +19,10 @@
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-
+.card h1, .card h2, .card span {
+  
+   text-shadow: 1px 1px 3px black; 
+}
 
 .cardBgBox {
   /* position: relative; */
@@ -62,7 +34,7 @@
   width: 400px;
   margin: 1.7rem 0;
   /* background-image: url("../../../public/image-3.webp"); */
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
   border: 2px inset rgba(179, 122, 0, 0.568);
   box-shadow: 4px 7px 15px 2px rgb(19, 19, 19);
 }

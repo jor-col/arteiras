@@ -11,13 +11,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  /* flex-direction: row; */
   gap: 30px;
   box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
-
+div.artist{
+  margin-top:15px;
+}
 div.swiper{
-  
   height: 400px;
   width: 200px;
 }
