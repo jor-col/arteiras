@@ -1,3 +1,6 @@
+## Hosted Site
+_site is currently live here: [https://arteiras.vercel.app/](https://arteiras.vercel.app/)_
+
 ## Getting Started
 
 First, run the development server:
